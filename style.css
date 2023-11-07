@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    min-height: 100vh;
+    background: #B2C8BA;
+    background-image: url(img/background.png);
+    object-position: cover;
+    background-size: 100% 100%;
+}
+
+
+.p{
+    font-size: 25px;
+    font-family: sans-serif;
+    color: #3D30A2;
+    background: #97ffb111;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 10px #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-shadow: 2px 2px 2px #fff;
+}
+
+.password-box {
+    min-width: 300px;
+    max-width: calc(100% - 20px);
+    background: #ffffff3f;
+    backdrop-filter: blur(10px);
+    min-height: 300px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.result {
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 5px;
+    border: 2px dashed rgb(1, 92, 1);
+    text-align: center;
+    background: #97ffb1;
+    color: rgb(1, 92, 1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.optionsbox {
+    width: 100%;
+    padding: 10px;
+}
+
+.length {
+    position: relative;
+    width: 300px;
+    margin: 50px auto;
+}
+
+input[type="range"] {
+    width: 100%;
+    position: relative;
+}
+
+.len-val {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffee00;
+    color: #000000;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.len-val::after{
+    position: absolute;
+    content: '';
+    width:  0px;
+    height: 0px;
+    border-top: 10px solid rgb(0, 0, 0);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    bottom: -14px;
+    left: 9px;
+}
+
+.length label {
+    width: calc(100% / 3);
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.5s;
+    border-radius: 50px;
+    box-shadow: 0px 0px 4px #000;
+}
+
+.length label.active {
+    background: #97ffb1;
+    accent-color: #00ff37;
+    color: #3A4D39;
+    box-shadow: 0px 0px 10px #069b26;
+}
+
+.chars {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.chars label {
+    width: calc(100% / 2.5 + 10px);
+    padding: 10px;
+    border-radius: 50px;
+    accent-color: #4F4A45;
+    text-transform: capitalize;
+    display: flex;
+    gap: 5px;
+    box-shadow: 0px 0px 4px #000;
+    transition: all 0.5s;
+}
+
+.chars label.active {
+    background: #97ffb1;
+    accent-color: #00ff37;
+    box-shadow: 0px 0px 10px #069b26;
+    color: #3A4D39;
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #3D30A2;
+    color: #fff;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+    text-transform: capitalize;
+}
+
+.btn:disabled {
+    background: #9669ff;
+    cursor: not-allowed;
+}
+
+#copy {
+    padding: 10px 20px;
+    background: #0099ff;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    min-width: 100px;
+}
+
+@media screen and (max-width:425px) {
+    .container{
+        background-size: 200% 100%;
+    }
+}
+

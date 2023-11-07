@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <p class="p">P@$$word Generator</p>
+        <div class="password-box">
+            <p class="result" id="result">0987654321</p>
+            <div class="btn-container">
+                <button type="button" id="copy">copy</button>
+                <button class="btn">generate</button>
+            </div>
+            <div class="optionsbox">
+                <div class="length">
+                    <span class="len-val" id="indicator">4</span>
+                    <input type="range" name="len" id="len" min="4" max="120" value="4">
+                </div>
+                <div class="chars">
+                    <label class="active">
+                        <input type="checkbox" name="chars" id="chars" value="chars" checked>
+                        characters
+                    </label>
+                    <label>
+                        <input type="checkbox" name="symbols" id="symbols" value="symbols">
+                        symbols
+                    </label>
+                    <label>
+                        <input type="checkbox" name="numbers" id="Numbers">
+                        Numbers
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const rangeInput = document.getElementById('len');
+const indicator = document.getElementById('indicator');
+
+rangeInput.addEventListener('input', () => {
+    const rangeValue = rangeInput.value;
+    indicator.textContent = rangeValue;
+    updateIndicatorPosition();
+});
+
+function updateIndicatorPosition() {
+    const rangeWidth = rangeInput.offsetWidth;
+    const rangeValue = rangeInput.value;
+    const indicatorWidth = indicator.offsetWidth;
+    const left = (rangeValue / 110) * (rangeWidth - indicatorWidth);
+    indicator.style.left = left + 'px';
+}
+
+updateIndicatorPosition(); // Initialize the indicator position
+
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
